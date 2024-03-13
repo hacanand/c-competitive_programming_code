@@ -7,7 +7,7 @@
 #include <ctime>
 
 // Define your fitness function
-double fitnessFunction(const std::vector<double> &position)
+double fitnessFunction(const std::vector <double> &position)
 {
     double sum = 0.0;
     for (double value : position)
