@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <ctime>
 
-// Define your fitness function
+//  Define your fitness function
 double fitnessFunction(const std::vector<int> &chromosome)
 {
     // Your fitness function logic here
