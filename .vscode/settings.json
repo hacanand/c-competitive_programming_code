@@ -3,5 +3,8 @@
         "iostream": "cpp",
         "istream": "cpp",
         "random": "cpp"
-    }
+    },
+    "cSpell.words": [
+        "repi"
+    ]
 }
