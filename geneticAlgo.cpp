@@ -1,4 +1,4 @@
-// // Genetic Algorithm Implementation
+//! Genetic Algorithm Implementation
 
 #include <iostream>
 #include <vector>
