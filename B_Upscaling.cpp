@@ -1,65 +1,45 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <iostream>
+#include <vector>
 
-#define ll long long
-#define in_vec(v)               \
-    vector<int> v;              \
-    for (int i = 0; i < n; i++) \
-    {                           \
-        int x;                  \
-        cin >> x;               \
-        v.push_back(x);         \
+void printCheckerboard(int n)
+{
+    std::vector<std::vector<char>> board(2 * n, std::vector<char>(2 * n));
+
+    for (int i = 0; i < 2 * n; i++)
+    {
+        for (int j = 0; j < 2 * n; j++)
+        {
+            if ((i / 2 + j / 2) % 2 == 0)
+            {
+                board[i][j] = '#';
+            }
+            else
+            {
+                board[i][j] = '.';
+            }
+        }
     }
-#define out(n) cout << n << "\n";
-#define loop(n) for (int i = 0; i < n; i++)
-#define repi(x, a, b) for (int i = x; i < a; i += b)
-#define r_loop(n) for (int i = n - 1; i >= 0; i--)
-#define for_each(n) for (auto &i : n)
-#define in(n) cin >> n;
-#define sort(x) sort(x.begin(), x.end());
-#define r_sort(x) sort(x.rbegin(), x.rend());
-#define b_find(n, x) lower_bound(n.begin(), n.end(), x);
 
-void myHash(){
-    cout << "##"<<"\n";
-    cout << "##";
-
-}
-void myDot(){
-    cout << ".."<< "\n";
-    cout << "..";
+    for (int i = 0; i < 2 * n; i++)
+    {
+        for (int j = 0; j < 2 * n; j++)
+        {
+            std::cout << board[i][j];
+        }
+        std::cout << "\n";
+    }
 }
 
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output1.txt", "w", stdout);
-#endif
     int t;
-    cin >> t;
-    while (t--)
+    std::cin >> t;
+    for (int i = 0; i < t; i++)
     {
         int n;
-        cin >> n;
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {  
-                if ((i + j) % 2 == 0)
-                    myHash();
-                if ((i + j) % 2 != 0)
-                    myDot();
-                if(j==n-1)
-                cout << "\n";
-            }
-            
-        }
+        std::cin >> n;
+        printCheckerboard(n);
     }
-
+    
     return 0;
 }
