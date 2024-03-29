@@ -31,13 +31,54 @@ int main()
     freopen("input.txt", "r", stdin);
     freopen("output1.txt", "w", stdout);
 #endif
-    int t;
-    cin >> t;
-    while (t--)
+    // int t;
+    // cin >> t;
+    // while (t--)
+    // {
+    //     }
+    ll n, m, k;
+    cin >> n >> m >> k;
+    ll a[n];
+    loop(n)
     {
-          
-
+        cin >> a[i];
     }
-
+    vector<vector<ll>> v;
+    repi(1, m + 1, 1)
+    {
+        ll x, y, z;
+        cin >> x >> y >> z;
+        x--;
+        y--;
+        v.push_back({x, y, z});
+    }
+    vector<ll> ps(m+1, 0);
+    repi(1, k + 1, 1)
+    {
+        ll x, y;
+        cin >> x >> y;
+        x--;
+        y--;
+        ps[x]++;
+        ps[y + 1]--;
+    }
+    ll sum = 0;
+    ll ans = 0;
+    vector<ll>t(n+1, 0);
+    repi(0, m , 1)
+    {
+        sum += ps[i];
+        v[i][2] *= sum;
+        t[v[i][0]] += v[i][2];
+        t[v[i][1] + 1] -= v[i][2];
+    }
+    sum = 0;
+    loop(n)
+    {
+        sum += t[i];
+        t[i] = sum;
+        cout<<t[i]+a[i]<<" ";
+    }
+    cout<<"\n";
     return 0;
 }
