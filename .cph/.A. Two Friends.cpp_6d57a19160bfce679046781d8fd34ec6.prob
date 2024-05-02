@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"c:\\Users\\hac\\Desktop\\C++ code\\A. Two Friends.cpp","tests":[{"id":1714402563103,"input":"3\n5\n3 1 2 5 4\n4\n2 3 4 1\n2\n2 1","output":"2\n3\n2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\hac\\Desktop\\C++ code\\A. Two Friends.cpp","group":"local","local":true}
