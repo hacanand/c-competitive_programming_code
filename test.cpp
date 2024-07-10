@@ -2,45 +2,48 @@
 using namespace std;
 #define int long long
 
-int32_t main()
+bool check_prime(int n)
 {
+
+    for (int i = 2; i * i <= n; i++)
+    {
+        if (n % i != 0)
+            return true;
+    }
+
+    return false;
+}
+
+int find_square(int n)
+{
+
+    vector<int> arr;
+
+    while (arr.size() < 2)
+    {
+        if (check_prime(n))
+            arr.push_back(n);
+        n++;
+    }
+
+    return arr[0] * arr[1];
+}
+
+signed main()
+{
+    // your code goes here
     int t;
     cin >> t;
     while (t--)
     {
-        int n, k, h;
-        cin >> n >> k >> h;
 
-        int count = 0;
+        int n;
+        cin >> n;
+        if (n == 1)
+            n++;
 
-        for (int a = 1; a <= n; a++)
-        {
-            int b_max = n;
-            for (int i = 0; i < k; i++)
-            {
-                if (i == 0)
-                {
-                    if (a < h)
-                    {
-                        b_max = 0; // No valid b for i=0 if a < h
-                        break;
-                    }
-                }
-                else
-                {
-                    // Calculate max b for this i
-                    int new_b_max = (a * (i + 1) - h + i - 1) / i;
-                    b_max = min(b_max, new_b_max);
-                }
-            }
-
-            if (b_max >= 1)
-            {
-                count += b_max;
-            }
-        }
-
-        cout << count << endl;
+        cout << find_square(n) << endl;
     }
+
     return 0;
 }
