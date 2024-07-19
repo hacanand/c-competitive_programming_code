@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <curl/curl.h>
 using namespace std;
 #define int long long
 
