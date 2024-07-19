@@ -1,50 +1,39 @@
-#include <bits/stdc++.h>
-#include <curl/curl.h>
+#include <iostream>
+#include <string>
 using namespace std;
-#define int long long
 
-bool check_prime(int n)
-{
-
-    for (int i = 2; i * i <= n; i++)
-    {
-        if (n % i != 0)
-            return true;
+int main() {
+    int testCases;
+    cin >> testCases;
+    while (testCases--) {
+        int length, allowedChanges;
+        cin >> length >> allowedChanges;
+        string str1, str2;
+        cin >> str1 >> str2;
+        if (str1 == str2 && (str1 == "01" || str1 == "10") && allowedChanges % 2 == 1) {
+            cout << "NO" << endl;
+            continue;
+        }
+        int diffCount = 0, sumOfOnes = 0, sameCount = 0;
+        for (int i = 0; i < length; i++) {
+            if (str1[i] != str2[i]) {
+                diffCount++;
+                sumOfOnes += str1[i] - '0';
+            }
+            else {
+                sameCount++;
+            }
+        }
+        if (diffCount == 2 && length == 2 && allowedChanges % 2 == 0) {
+            cout << "NO" << endl;
+            continue;
+        }
+        if (diffCount == sumOfOnes * 2 && sumOfOnes <= allowedChanges) {
+            cout << "YES" << endl;
+        }
+        else {
+            cout << "NO" << endl;
+        }
     }
-
-    return false;
-}
-
-int find_square(int n)
-{
-
-    vector<int> arr;
-
-    while (arr.size() < 2)
-    {
-        if (check_prime(n))
-            arr.push_back(n);
-        n++;
-    }
-
-    return arr[0] * arr[1];
-}
-
-signed main()
-{
-    // your code goes here
-    int t;
-    cin >> t;
-    while (t--)
-    {
-
-        int n;
-        cin >> n;
-        if (n == 1)
-            n++;
-
-        cout << find_square(n) << endl;
-    }
-
     return 0;
 }
