@@ -6,11 +6,11 @@ int main(){
     cin >> s;
     int score = 0;
     int count = 0;
-    for(char i:s){
+    for(char &i:s){
         if(count==3){
             break;
         }
-        if(i=='T'){
+        if(s=='T'){
             score += -1;
             count = 0;
         }
