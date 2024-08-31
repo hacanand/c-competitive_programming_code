@@ -1,0 +1,1 @@
+{"name":"Local: cyfuture_trianglearea","url":"c:\\Users\\hac\\Desktop\\C++ code\\cyfuture_trianglearea.cpp","tests":[{"id":1725129272994,"input":"2\n3\n4\n3 \n3 \n5","output":"8"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\hac\\Desktop\\C++ code\\cyfuture_trianglearea.cpp","group":"local","local":true}
