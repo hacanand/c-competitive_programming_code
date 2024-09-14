@@ -8,19 +8,32 @@
     {
         unordered_map<int, int> remainderCount;
         int count = 0;
-
-        for (int minute : minutes)
-        {
+        for(int minute:minutes){
             int remainder = minute % 60;
-            int complement = (60 - remainder) % 60;
-
-            if (remainderCount.find(complement) != remainderCount.end())
-            {
-                count += remainderCount[complement];
-                cout << minute << " " << complement << endl;
-            }
             remainderCount[remainder]++;
         }
+            for(int minute:minutes){
+                int remainder=minute%60;
+                int complement=(60-remainder)%60;
+                if(remainderCount.find(complement)!=remainderCount.end()){
+                    count+=remainderCount[complement];
+                    remainderCount.erase(remainder);
+                }
+
+            }
+
+        // for (int minute : minutes)
+        // {
+        //     int remainder = minute % 60;
+        //     int complement = (60 - remainder) % 60;
+
+        //     if (remainderCount.find(complement) != remainderCount.end())
+        //     {
+        //         count += remainderCount[complement];
+        //         //cout << minute << " " << complement << endl;
+        //     }
+        //     remainderCount[remainder]++;
+        // }
 
         return count;
     }
