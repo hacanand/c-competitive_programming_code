@@ -30,16 +30,16 @@
 
 
 # from itertools import accumulate
-def maximizeTotalMemoryPoints(memory):
-    memory.sort(reverse=True)
-    cumulative_sum=accumulate(memory)
-    return sum(cumulative_sum) 
+# def maximizeTotalMemoryPoints(memory):
+#     memory.sort(reverse=True)
+#     cumulative_sum=accumulate(memory)
+#     return sum(cumulative_sum) 
 
-def maximizeTotalMemoryPoints(memory):
-    memory.sort(reverse=True)
-    n=0
-    c=0
-    for i in memory:
-        c+=i
-        n+=c
-    return n
+# def maximizeTotalMemoryPoints(memory):
+#     memory.sort(reverse=True)
+#     n=0
+#     c=0
+#     for i in memory:
+#         c+=i
+#         n+=c
+#     return n
